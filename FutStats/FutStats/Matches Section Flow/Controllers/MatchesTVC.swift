@@ -8,10 +8,8 @@
 import UIKit
 
 class MatchesTVC: UITableViewController {
-    var match1: Match?
-    var match2: Match?
-    var match3: Match?
-    var matches = [Match]()
+   
+    var matches : [Match] = [Match(hostTeam: Team(league: "La Liga", name: "Real Madrid", numberOfPLayers: 23), arrivedTeam: Team(league: "La Liga", name: "FC Barcelona", numberOfPLayers: 23), score: Score(hostTeamScored: 8, arrivedTeamScored: 2))]
     override func viewDidLoad() {
         super.viewDidLoad()
 
