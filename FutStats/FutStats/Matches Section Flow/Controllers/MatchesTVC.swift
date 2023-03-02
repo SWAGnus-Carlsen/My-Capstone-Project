@@ -9,14 +9,14 @@ import UIKit
 
 class MatchesTVC: UITableViewController {
    
-    var matches : [Match] = [Match(hostTeam: Team(league: "La Liga", name: "Real Madrid", numberOfPLayers: 23), arrivedTeam: Team(league: "La Liga", name: "FC Barcelona", numberOfPLayers: 23), score: Score(hostTeamScored: 8, arrivedTeamScored: 2))]
+    var matches = [Match]()
+    let url = "https://api.football-data.org/v4/matches/"
+    override func viewWillAppear(_ animated: Bool) {
+        matches = APIManager.shared.fetchMatches(from: url)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
          self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
@@ -29,18 +29,18 @@ class MatchesTVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return matches.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-        // Configure the cell...
+        
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

@@ -7,7 +7,4 @@
 
 import UIKit
 
-struct Score: Codable {
-    let hostTeamScored: Int?
-    let arrivedTeamScored: Int?
-}
+
