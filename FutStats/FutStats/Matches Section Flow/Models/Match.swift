@@ -20,66 +20,73 @@ extension Welcome {
 
 }
 
+// MARK: - ResultSet
+struct ResultSet: Codable {
+    let count: Int?
+    let competitions, first, last: String?
+    let played: Int?
+}
+
 // MARK: - Filters
 struct Filters: Codable {
-    let dateFrom, dateTo, permission: String
+    let dateFrom, dateTo, permission: String?
 }
 
 // MARK: - Match
 struct Match: Codable {
-    let area: Area
-    let competition: Competition
-    let season: Season
-    let id: Int
-    let utcDate: Date
-    let status: String
-    let matchday: Int
-    let stage: String
+    let area: Area?
+    let competition: Competition?
+    let season: Season?
+    let id: Int?
+    let utcDate: String?
+    let status: String?
+    let matchday: Int?
+    let stage: String?
     let group: String?
-    let lastUpdated: Date
-    let homeTeam, awayTeam: Team
-    let score: Score
-    let odds: Odds
-    let referees: [Referee]
+    let lastUpdated: String?
+    let homeTeam, awayTeam: Team?
+    let score: Score?
+    let odds: Odds?
+    let referees: [Referee]?
 }
 
 // MARK: - Area
 struct Area: Codable {
-    let id: Int
-    let name, code: String
-    let flag: String
+    let id: Int?
+    let name, code: String?
+    let flag: String?
 }
 
 // MARK: - Team
 struct Team: Codable {
-    let id: Int
-    let name, shortName, tla: String
-    let crest: String
+    let id: Int?
+    let name, shortName, tla: String?
+    let crest: String?
 }
 
 // MARK: - Competition
 struct Competition: Codable {
-    let id: Int
-    let name, code, type: String
-    let emblem: String
+    let id: Int?
+    let name, code, type: String?
+    let emblem: String?
 }
 
 // MARK: - Odds
 struct Odds: Codable {
-    let msg: String
+    let msg: String?
 }
 
 // MARK: - Referee
 struct Referee: Codable {
-    let id: Int
-    let name, type, nationality: String
+    let id: Int?
+    let name, type, nationality: String?
 }
 
 // MARK: - Score
 struct Score: Codable {
     let winner: String?
-    let duration: String
-    let fullTime, halfTime: Time
+    let duration: String?
+    let fullTime, halfTime: Time?
 }
 
 // MARK: - Time
@@ -89,18 +96,13 @@ struct Time: Codable {
 
 // MARK: - Season
 struct Season: Codable {
-    let id: Int
+    let id: Int?
     let startDate, endDate: String?
     let currentMatchday: Int?
     let winner: String?
 }
 
-// MARK: - ResultSet
-struct ResultSet: Codable {
-    let count: Int?
-    let competitions, first, last: String?
-    let played: Int?
-}
+
 
 // MARK: - Encode/decode helpers
 
