@@ -80,7 +80,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jbv-YO-W0K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2611" y="1429"/>
+            <point key="canvasLocation" x="-2611.450381679389" y="1428.8732394366198"/>
         </scene>
         <!--MatchesTVC-->
         <scene sceneID="k3R-VP-vTZ">
@@ -189,7 +189,13 @@
                             <outlet property="delegate" destination="eS1-BO-eyK" id="Ogy-up-st7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="4ra-gt-J0Y"/>
+                    <navigationItem key="navigationItem" id="4ra-gt-J0Y">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="arrow.triangle.2.circlepath" catalog="system" id="On6-5g-Byc">
+                            <connections>
+                                <action selector="reloadTapped:" destination="eS1-BO-eyK" id="hpO-jm-W4E"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T21-5H-r6u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -265,6 +271,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.triangle.2.circlepath" catalog="system" width="128" height="104"/>
         <image name="figure.soccer" catalog="system" width="126" height="128"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="person.crop.square" catalog="system" width="128" height="114"/>

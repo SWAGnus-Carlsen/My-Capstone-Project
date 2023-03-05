@@ -18,13 +18,8 @@ final class MatchesTVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        APIManager.shared.fetchMatches(from: url) { fetchedData in
-            self.matches = fetchedData
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-         self.navigationItem.rightBarButtonItem = self.editButtonItem
+        fillTable()
+        navigationItem.rightBarButtonItems?.append(editButtonItem) 
     }
    
         
@@ -103,5 +98,16 @@ final class MatchesTVC: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    private func fillTable() {
+        APIManager.shared.fetchMatches(from: url) { fetchedData in
+            self.matches = fetchedData
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    @IBAction func reloadTapped(_ sender: Any) {
+        fillTable()
+    }
 }
