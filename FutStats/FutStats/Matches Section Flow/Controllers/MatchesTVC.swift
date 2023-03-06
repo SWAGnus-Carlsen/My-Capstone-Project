@@ -7,10 +7,11 @@
 
 import UIKit
 import SwiftyJSON
+import Lottie
 final class MatchesTVC: UITableViewController {
    
 
-    
+    private var animationView = LottieAnimationView(name: "90617-horizontal-progress-bar")
     var matches = [Match]()
     let url = "https://api.football-data.org/v4/matches/"
     
@@ -19,7 +20,7 @@ final class MatchesTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         fillTable()
-        navigationItem.rightBarButtonItems?.append(editButtonItem) 
+        navigationItem.rightBarButtonItems?.append(editButtonItem)
     }
    
         
@@ -50,6 +51,8 @@ final class MatchesTVC: UITableViewController {
         
         APIManager.shared.fetchLogos(URLString: currMatch.homeTeam?.crest ?? "", for: cell.homeTeamLogo)
         APIManager.shared.fetchLogos(URLString: currMatch.awayTeam?.crest ?? "", for: cell.awayTeamLogo)
+        
+        setupAnimation(cell: cell)
         return cell
     }
     
@@ -98,6 +101,7 @@ final class MatchesTVC: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
     private func fillTable() {
         APIManager.shared.fetchMatches(from: url) { fetchedData in
             self.matches = fetchedData
@@ -110,4 +114,15 @@ final class MatchesTVC: UITableViewController {
     @IBAction func reloadTapped(_ sender: Any) {
         fillTable()
     }
+    
+    private func setupAnimation(cell: UITableViewCell){
+        animationView.contentMode = .scaleAspectFit
+        animationView.frame.size = CGSize(width: 50, height: 30)
+        animationView.center = cell.center
+        animationView.loopMode = .autoReverse
+        animationView.play()
+        //print("centerX  \(cell.center.x), centerY \(cell.center.y)")
+        cell.addSubview(animationView)
+    }
 }
+

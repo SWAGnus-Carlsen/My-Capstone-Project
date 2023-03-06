@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Lottie
 class MatchesCell: UITableViewCell {
 
     
@@ -17,6 +17,8 @@ class MatchesCell: UITableViewCell {
     @IBOutlet weak var awayTeamGoals: UILabel!
     @IBOutlet weak var awayTeamLogo: UIImageView!
     @IBOutlet weak var awayTeamName: UILabel!
+    
+   
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -33,4 +35,5 @@ class MatchesCell: UITableViewCell {
     static func identifier() -> String {
         "MatchesCell"
     }
+   
 }
