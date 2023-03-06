@@ -7,8 +7,4 @@
 
 import UIKit
  
-struct Team: Codable {
-    let league: String?
-    let name: String?
-    let numberOfPLayers: Int?
-}
+

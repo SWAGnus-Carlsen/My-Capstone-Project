@@ -6,41 +6,53 @@
 //
 
 import UIKit
-
-class MatchesTVC: UITableViewController {
+import SwiftyJSON
+final class MatchesTVC: UITableViewController {
    
-    var matches : [Match] = [Match(hostTeam: Team(league: "La Liga", name: "Real Madrid", numberOfPLayers: 23), arrivedTeam: Team(league: "La Liga", name: "FC Barcelona", numberOfPLayers: 23), score: Score(hostTeamScored: 8, arrivedTeamScored: 2))]
+
+    
+    var matches = [Match]()
+    let url = "https://api.football-data.org/v4/matches/"
+    
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-         self.navigationItem.rightBarButtonItem = self.editButtonItem
+        fillTable()
+        navigationItem.rightBarButtonItems?.append(editButtonItem) 
     }
+   
+        
+        
+        
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+//    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return matches.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MatchesCell
+        let currMatch = matches[indexPath.row]
+        cell.awayTeamName.text = currMatch.awayTeam?.name
+        cell.homeTeamName.text = currMatch.homeTeam?.name
+        
+        cell.homeTeamGoals.text = currMatch.score?.fullTime?.home?.description
+        cell.awayTeamGoals.text = currMatch.score?.fullTime?.away?.description
+        
+        APIManager.shared.fetchLogos(URLString: currMatch.homeTeam?.crest ?? "", for: cell.homeTeamLogo)
+        APIManager.shared.fetchLogos(URLString: currMatch.awayTeam?.crest ?? "", for: cell.awayTeamLogo)
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -62,20 +74,20 @@ class MatchesTVC: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
 
     }
-    */
+    
 
-    /*
+    
     // Override to support conditional rearranging of the table view.
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the item to be re-orderable.
         return true
     }
-    */
+    
 
     /*
     // MARK: - Navigation
@@ -86,5 +98,16 @@ class MatchesTVC: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    private func fillTable() {
+        APIManager.shared.fetchMatches(from: url) { fetchedData in
+            self.matches = fetchedData
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    @IBAction func reloadTapped(_ sender: Any) {
+        fillTable()
+    }
 }
