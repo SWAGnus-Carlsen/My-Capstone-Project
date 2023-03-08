@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0Ue-j3-3f0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dkV-We-FqH">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -190,11 +190,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="4ra-gt-J0Y">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="arrow.triangle.2.circlepath" catalog="system" id="On6-5g-Byc">
-                            <connections>
-                                <action selector="reloadTapped:" destination="eS1-BO-eyK" id="hpO-jm-W4E"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="On6-5g-Byc"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T21-5H-r6u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -285,7 +281,7 @@
         <!--Login View Controller-->
         <scene sceneID="b05-Yp-H5f">
             <objects>
-                <viewController id="0Ue-j3-3f0" customClass="LoginViewController" customModule="FBToDoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0Ue-j3-3f0" customClass="LoginViewController" customModule="FutStats" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cb7-c3-B3N">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -377,7 +373,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow.triangle.2.circlepath" catalog="system" width="128" height="104"/>
         <image name="figure.soccer" catalog="system" width="126" height="128"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="person.crop.square" catalog="system" width="128" height="114"/>

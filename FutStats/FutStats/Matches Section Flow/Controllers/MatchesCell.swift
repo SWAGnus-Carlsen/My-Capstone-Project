@@ -18,10 +18,11 @@ class MatchesCell: UITableViewCell {
     @IBOutlet weak var awayTeamLogo: UIImageView!
     @IBOutlet weak var awayTeamName: UILabel!
     
-   
+    private var animationView = LottieAnimationView(name: "progressBar")
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+   // setupAnimation()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -35,5 +36,18 @@ class MatchesCell: UITableViewCell {
     static func identifier() -> String {
         "MatchesCell"
     }
-   
+     func setupAnimation(){
+        animationView.contentMode = .scaleAspectFit
+        animationView.frame.size = CGSize(width: 100, height: 60)
+        animationView.center = self.center
+         animationView.center.y = 50
+        animationView.loopMode = .autoReverse
+        animationView.play()
+        //print("centerX  \(cell.center.x), centerY \(cell.center.y)")
+        self.addSubview(animationView)
+    }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        animationView.play()
+    }
 }
