@@ -18,8 +18,8 @@ class MatchesCell: UITableViewCell {
     @IBOutlet weak var awayTeamLogo: UIImageView!
     @IBOutlet weak var awayTeamName: UILabel!
     
-    private var animationView = LottieAnimationView(name: "progressBar")
-    
+    var animationView = LottieAnimationView(name: "progressBar2")
+    var isHiddenn: Bool = true
     override func awakeFromNib() {
         super.awakeFromNib()
    // setupAnimation()
@@ -38,12 +38,13 @@ class MatchesCell: UITableViewCell {
     }
      func setupAnimation(){
         animationView.contentMode = .scaleAspectFit
-        animationView.frame.size = CGSize(width: 100, height: 60)
+        animationView.frame.size = CGSize(width: 50, height: 30)
         animationView.center = self.center
          animationView.center.y = 50
         animationView.loopMode = .autoReverse
         animationView.play()
-        //print("centerX  \(cell.center.x), centerY \(cell.center.y)")
+         
+         animationView.isHidden = false
         self.addSubview(animationView)
     }
     override func prepareForReuse() {

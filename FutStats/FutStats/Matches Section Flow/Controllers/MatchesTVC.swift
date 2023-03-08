@@ -17,15 +17,17 @@ final class MatchesTVC: UITableViewController {
         case IN_PLAY
         case FINISHED
         case PAUSED
+        
         // not really useful but still...
+        
         case SUSPENDED
         case POSTPONED
         case CANCELLED
         case AWARDED
     }
-    var matchState: String = matchStatus.IN_PLAY.rawValue
+    
     var matches = [Match]()
-    let url = "https://api.football-data.org/v4/matches?date=2023-01-01"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,6 +72,8 @@ final class MatchesTVC: UITableViewController {
         APIManager.shared.fetchLogos(URLString: currMatch.awayTeam?.crest ?? "", for: cell.awayTeamLogo)
         if currMatch.status == matchStatus.IN_PLAY.rawValue{
             cell.setupAnimation()
+        } else {
+            cell.animationView.isHidden = true
         }
         
         return cell
@@ -115,7 +119,7 @@ final class MatchesTVC: UITableViewController {
      */
     
     private func fillTable() {
-        APIManager.shared.fetchMatches(from: url) { [weak self] fetchedData in
+        APIManager.shared.fetchMatches(from: ApiStringURLs.matchesForConcreteDate(date: "2023-03-08")) { [weak self] fetchedData in
             self?.matches = fetchedData
             DispatchQueue.main.async {
                 self?.tableView.refreshControl?.endRefreshing()
