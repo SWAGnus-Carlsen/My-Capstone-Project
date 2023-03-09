@@ -16,9 +16,19 @@
 		12536B1429918FDC00BE9579 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12536B1329918FDC00BE9579 /* Team.swift */; };
 		12536B162991926700BE9579 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12536B152991926700BE9579 /* Match.swift */; };
 		12536B18299193B900BE9579 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12536B17299193B900BE9579 /* Score.swift */; };
-		125C164029B3E5160026143B /* progressBar.json in Resources */ = {isa = PBXBuildFile; fileRef = 125C163F29B3E5150026143B /* progressBar.json */; };
+		125C164329B535330026143B /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 125C164229B535330026143B /* Lottie */; };
+		125C164529B53E3F0026143B /* progressBar.json in Resources */ = {isa = PBXBuildFile; fileRef = 125C164429B53E3F0026143B /* progressBar.json */; };
+		125C164729B53EB80026143B /* progressBar2.json in Resources */ = {isa = PBXBuildFile; fileRef = 125C164629B53EB80026143B /* progressBar2.json */; };
+		12BBC21E29B92347007F8720 /* API string URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BBC21D29B92347007F8720 /* API string URLs.swift */; };
+		12BBC22029B926CB007F8720 /* API Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BBC21F29B926CB007F8720 /* API Constants.swift */; };
+		12BBC22729B9F517007F8720 /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = 12BBC22629B9F517007F8720 /* SVGKit */; };
+		12BBC22929B9F517007F8720 /* SVGKitSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 12BBC22829B9F517007F8720 /* SVGKitSwift */; };
+		12CAF85529B6A2A00020C753 /* TasksTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CAF84E29B6A29F0020C753 /* TasksTVC.swift */; };
+		12CAF85629B6A2A00020C753 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CAF84F29B6A29F0020C753 /* LoginViewController.swift */; };
+		12CAF85729B6A2A00020C753 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CAF85129B6A2A00020C753 /* TaskModel.swift */; };
+		12CAF85829B6A2A00020C753 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CAF85229B6A2A00020C753 /* UserModel.swift */; };
+		12CAF87429B6B0DB0020C753 /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CAF87329B6B0DB0020C753 /* AccountVC.swift */; };
 		12DE572D29AF27AB00A6330B /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DE572C29AF27AB00A6330B /* APIManager.swift */; };
-		12DE573129AF331D00A6330B /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 12DE573029AF331D00A6330B /* SDWebImage */; };
 		12DE573429AF3E8E00A6330B /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 12DE573329AF3E8E00A6330B /* SwiftyJSON */; };
 		12DE574729B12F6B00A6330B /* MatchesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DE574629B12F6B00A6330B /* MatchesCell.swift */; };
 /* End PBXBuildFile section */
@@ -35,7 +45,15 @@
 		12536B1329918FDC00BE9579 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		12536B152991926700BE9579 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		12536B17299193B900BE9579 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
-		125C163F29B3E5150026143B /* progressBar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = progressBar.json; sourceTree = "<group>"; };
+		125C164429B53E3F0026143B /* progressBar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = progressBar.json; sourceTree = "<group>"; };
+		125C164629B53EB80026143B /* progressBar2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = progressBar2.json; sourceTree = "<group>"; };
+		12BBC21D29B92347007F8720 /* API string URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API string URLs.swift"; sourceTree = "<group>"; };
+		12BBC21F29B926CB007F8720 /* API Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API Constants.swift"; sourceTree = "<group>"; };
+		12CAF84E29B6A29F0020C753 /* TasksTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksTVC.swift; sourceTree = "<group>"; };
+		12CAF84F29B6A29F0020C753 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		12CAF85129B6A2A00020C753 /* TaskModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		12CAF85229B6A2A00020C753 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		12CAF87329B6B0DB0020C753 /* AccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
 		12DE572C29AF27AB00A6330B /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		12DE574629B12F6B00A6330B /* MatchesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -45,8 +63,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12BBC22929B9F517007F8720 /* SVGKitSwift in Frameworks */,
+				12BBC22729B9F517007F8720 /* SVGKit in Frameworks */,
 				12DE573429AF3E8E00A6330B /* SwiftyJSON in Frameworks */,
-				12DE573129AF331D00A6330B /* SDWebImage in Frameworks */,
+				125C164329B535330026143B /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +92,8 @@
 		12536AF4298FB28A00BE9579 /* FutStats */ = {
 			isa = PBXGroup;
 			children = (
+				12BBC22129B926D7007F8720 /* Constants for networking */,
+				12CAF84729B6A2290020C753 /* Sign in */,
 				12536AFB298FB28A00BE9579 /* Main.storyboard */,
 				12536B0A29918C7C00BE9579 /* Main Section Flow */,
 				12536B0B29918CCE00BE9579 /* Matches Section Flow */,
@@ -80,7 +102,8 @@
 				12536B00298FB28E00BE9579 /* LaunchScreen.storyboard */,
 				12536B09299146E100BE9579 /* AppDelegates */,
 				12536AFE298FB28E00BE9579 /* Assets.xcassets */,
-				125C163F29B3E5150026143B /* progressBar.json */,
+				125C164629B53EB80026143B /* progressBar2.json */,
+				125C164429B53E3F0026143B /* progressBar.json */,
 				12536B03298FB28E00BE9579 /* Info.plist */,
 			);
 			path = FutStats;
@@ -123,6 +146,7 @@
 		12536B0D29918CF100BE9579 /* Account Section Flow */ = {
 			isa = PBXGroup;
 			children = (
+				12CAF87329B6B0DB0020C753 /* AccountVC.swift */,
 			);
 			path = "Account Section Flow";
 			sourceTree = "<group>";
@@ -153,6 +177,42 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		12BBC22129B926D7007F8720 /* Constants for networking */ = {
+			isa = PBXGroup;
+			children = (
+				12BBC21D29B92347007F8720 /* API string URLs.swift */,
+				12BBC21F29B926CB007F8720 /* API Constants.swift */,
+			);
+			path = "Constants for networking";
+			sourceTree = "<group>";
+		};
+		12CAF84729B6A2290020C753 /* Sign in */ = {
+			isa = PBXGroup;
+			children = (
+				12CAF85029B6A2A00020C753 /* Models */,
+				12CAF84D29B6A29F0020C753 /* Controllers */,
+			);
+			path = "Sign in";
+			sourceTree = "<group>";
+		};
+		12CAF84D29B6A29F0020C753 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				12CAF84E29B6A29F0020C753 /* TasksTVC.swift */,
+				12CAF84F29B6A29F0020C753 /* LoginViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		12CAF85029B6A2A00020C753 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				12CAF85129B6A2A00020C753 /* TaskModel.swift */,
+				12CAF85229B6A2A00020C753 /* UserModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		12DE572E29AF27AF00A6330B /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,8 +238,10 @@
 			);
 			name = FutStats;
 			packageProductDependencies = (
-				12DE573029AF331D00A6330B /* SDWebImage */,
 				12DE573329AF3E8E00A6330B /* SwiftyJSON */,
+				125C164229B535330026143B /* Lottie */,
+				12BBC22629B9F517007F8720 /* SVGKit */,
+				12BBC22829B9F517007F8720 /* SVGKitSwift */,
 			);
 			productName = FutStats;
 			productReference = 12536AF2298FB28A00BE9579 /* FutStats.app */;
@@ -210,8 +272,9 @@
 			);
 			mainGroup = 12536AE9298FB28900BE9579;
 			packageReferences = (
-				12DE572F29AF331D00A6330B /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				12DE573229AF3E8E00A6330B /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				125C164129B535330026143B /* XCRemoteSwiftPackageReference "lottie-spm" */,
+				12BBC22529B9F517007F8720 /* XCRemoteSwiftPackageReference "SVGKit" */,
 			);
 			productRefGroup = 12536AF3298FB28A00BE9579 /* Products */;
 			projectDirPath = "";
@@ -227,10 +290,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				125C164729B53EB80026143B /* progressBar2.json in Resources */,
+				125C164529B53E3F0026143B /* progressBar.json in Resources */,
 				12536B02298FB28E00BE9579 /* LaunchScreen.storyboard in Resources */,
 				12536AFF298FB28E00BE9579 /* Assets.xcassets in Resources */,
 				12536AFD298FB28A00BE9579 /* Main.storyboard in Resources */,
-				125C164029B3E5160026143B /* progressBar.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,14 +305,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12CAF85629B6A2A00020C753 /* LoginViewController.swift in Sources */,
 				12536B1429918FDC00BE9579 /* Team.swift in Sources */,
 				12DE574729B12F6B00A6330B /* MatchesCell.swift in Sources */,
 				12536B0F29918DF300BE9579 /* MatchesTVC.swift in Sources */,
+				12CAF85729B6A2A00020C753 /* TaskModel.swift in Sources */,
 				12536AF6298FB28A00BE9579 /* AppDelegate.swift in Sources */,
 				12536B162991926700BE9579 /* Match.swift in Sources */,
+				12BBC21E29B92347007F8720 /* API string URLs.swift in Sources */,
+				12CAF87429B6B0DB0020C753 /* AccountVC.swift in Sources */,
 				12536B18299193B900BE9579 /* Score.swift in Sources */,
 				12536AF8298FB28A00BE9579 /* SceneDelegate.swift in Sources */,
+				12BBC22029B926CB007F8720 /* API Constants.swift in Sources */,
 				12DE572D29AF27AB00A6330B /* APIManager.swift in Sources */,
+				12CAF85829B6A2A00020C753 /* UserModel.swift in Sources */,
+				12CAF85529B6A2A00020C753 /* TasksTVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +466,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CCCW4AN62Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FutStats/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -422,6 +494,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CCCW4AN62Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FutStats/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -466,12 +539,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		12DE572F29AF331D00A6330B /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+		125C164129B535330026143B /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
+				minimumVersion = 4.0.0;
+			};
+		};
+		12BBC22529B9F517007F8720 /* XCRemoteSwiftPackageReference "SVGKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SVGKit/SVGKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
 			};
 		};
 		12DE573229AF3E8E00A6330B /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
@@ -485,10 +566,20 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		12DE573029AF331D00A6330B /* SDWebImage */ = {
+		125C164229B535330026143B /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 12DE572F29AF331D00A6330B /* XCRemoteSwiftPackageReference "SDWebImage" */;
-			productName = SDWebImage;
+			package = 125C164129B535330026143B /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
+		};
+		12BBC22629B9F517007F8720 /* SVGKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 12BBC22529B9F517007F8720 /* XCRemoteSwiftPackageReference "SVGKit" */;
+			productName = SVGKit;
+		};
+		12BBC22829B9F517007F8720 /* SVGKitSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 12BBC22529B9F517007F8720 /* XCRemoteSwiftPackageReference "SVGKit" */;
+			productName = SVGKitSwift;
 		};
 		12DE573329AF3E8E00A6330B /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Lottie
 class MatchesCell: UITableViewCell {
 
     
@@ -17,9 +17,12 @@ class MatchesCell: UITableViewCell {
     @IBOutlet weak var awayTeamGoals: UILabel!
     @IBOutlet weak var awayTeamLogo: UIImageView!
     @IBOutlet weak var awayTeamName: UILabel!
+    
+    var animationView = LottieAnimationView(name: "progressBar2")
+    var isHiddenn: Bool = true
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+   // setupAnimation()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -32,5 +35,25 @@ class MatchesCell: UITableViewCell {
     }
     static func identifier() -> String {
         "MatchesCell"
+    }
+     func setupAnimation(){
+        animationView.contentMode = .scaleAspectFit
+        animationView.frame.size = CGSize(width: 50, height: 30)
+        animationView.center = self.center
+         animationView.center.y = 50
+        animationView.loopMode = .autoReverse
+        animationView.play()
+         
+         animationView.isHidden = false
+        self.addSubview(animationView)
+    }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        for subview in homeTeamLogo.subviews {
+            subview.removeFromSuperview()
+        }
+        for subview in awayTeamLogo.subviews {
+            subview.removeFromSuperview()
+        }
     }
 }
