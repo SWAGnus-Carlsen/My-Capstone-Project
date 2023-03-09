@@ -56,6 +56,7 @@ final class MatchesTVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        
         return matches.count
     }
 
@@ -119,7 +120,8 @@ final class MatchesTVC: UITableViewController {
      */
     
     private func fillTable() {
-        APIManager.shared.fetchMatches(from: ApiStringURLs.matchesForConcreteDate(date: "2023-03-08")) { [weak self] fetchedData in
+        
+        APIManager.shared.fetchMatches(from: ApiStringURLs.matchesForConcreteDate(date: "2023-03-05")) { [weak self] fetchedData in
             self?.matches = fetchedData
             DispatchQueue.main.async {
                 self?.tableView.refreshControl?.endRefreshing()

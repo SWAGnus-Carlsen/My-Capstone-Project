@@ -5,66 +5,80 @@
 //  Created by Vitaliy Halai on 1.03.23.
 //
 
-import UIKit
+import SVGKit
 import SwiftyJSON
-
+import UIKit
 class APIManager {
-    
     static var shared = APIManager()
     private init() {}
  
-    func fetchMatches(from urlString: String,  completion: @escaping ([Match]) -> Void)  {
+    func fetchMatches(from urlString: String, completion: @escaping ([Match]) -> Void) {
         guard let url = URL(string: urlString) else {
             print("Error occured while converting url")
-           return
+            return
         }
         var request = URLRequest(url: url)
-        request.addValue(APIConstants.authToken, forHTTPHeaderField: APIConstants.nameOfHeader)
+        request.addValue(APIConstants.authToken,
+                         forHTTPHeaderField: APIConstants.nameOfHeader)
         
-        
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+        let task = URLSession.shared.dataTask(with: request) { data, _, error in
             guard let data, error == nil else { return }
             
-            
             do {
-                
                 let jsonData = try JSONDecoder().decode(Welcome.self, from: data)
                 print(try JSON(data: data))
                 completion(jsonData.matches)
-   
-            }
-            catch {
+            } catch {
                 print("failed to convert: \(error)")
             }
- 
         }
         task.resume()
     }
     
-     func fetchLogos(URLString: String, for imageView: UIImageView) {
-        guard let URL = URL(string: URLString)
-              
-         else {
-            return
+    func fetchLogos(URLString: String, for imageView: UIImageView) {
+        var hasSVG = false
+        if URLString.contains(".svg") {
+            hasSVG = true
         }
+        
+        guard let URL = URL(string: URLString) else { return }
+        
         var request = URLRequest(url: URL)
-         request.addValue(APIConstants.authToken, forHTTPHeaderField: APIConstants.nameOfHeader)
-        let homeTask = URLSession.shared.dataTask(with: request) { data, response, error in
-            
-            DispatchQueue.main.async {
+        request.addValue(APIConstants.authToken,
+                         forHTTPHeaderField: APIConstants.nameOfHeader)
+        
+        let task = URLSession.shared.dataTask(with: request) { data, _, error in
+            if hasSVG {
+                // Add the SVGKImageView to the view hierarchy
+                DispatchQueue.main.async {
+                    guard error == nil, let data = data else {
+                        print("Error fetching SVG image: \(error?.localizedDescription ?? "unknown error")")
+                        return
+                    }
+                    // Create an SVGKImage object from the SVG data
+                    let svgImage = SVGKImage(data: data)
                 
-                if let data,
-                    error == nil,
-                   let image = UIImage(data: data)
-                {
-                    imageView.image = image
-                } else {
-                    imageView.image = UIImage(named: "placeholder")
+                    // Create an SVGKImageView and set its image to the SVGKImage
+                    guard let svgView = SVGKFastImageView(svgkImage: svgImage) else {
+                        return
+                    }
+                    svgView.frame.size = imageView.frame.size
+                    imageView.image = nil
+                    imageView.insertSubview(svgView, at: 1)
                 }
-                
+            } else {
+                DispatchQueue.main.async {
+                    if let data,
+                       error == nil,
+                       let image = UIImage(data: data)
+                    {
+                        imageView.image = image
+                    } else {
+                        imageView.image = UIImage(named: "placeholder")
+                    }
+                }
             }
         }
-        homeTask.resume()
+        task.resume()
     }
 }
-

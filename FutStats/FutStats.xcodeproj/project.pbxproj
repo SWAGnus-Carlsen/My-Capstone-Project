@@ -21,6 +21,8 @@
 		125C164729B53EB80026143B /* progressBar2.json in Resources */ = {isa = PBXBuildFile; fileRef = 125C164629B53EB80026143B /* progressBar2.json */; };
 		12BBC21E29B92347007F8720 /* API string URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BBC21D29B92347007F8720 /* API string URLs.swift */; };
 		12BBC22029B926CB007F8720 /* API Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BBC21F29B926CB007F8720 /* API Constants.swift */; };
+		12BBC22729B9F517007F8720 /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = 12BBC22629B9F517007F8720 /* SVGKit */; };
+		12BBC22929B9F517007F8720 /* SVGKitSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 12BBC22829B9F517007F8720 /* SVGKitSwift */; };
 		12CAF85529B6A2A00020C753 /* TasksTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CAF84E29B6A29F0020C753 /* TasksTVC.swift */; };
 		12CAF85629B6A2A00020C753 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CAF84F29B6A29F0020C753 /* LoginViewController.swift */; };
 		12CAF85729B6A2A00020C753 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CAF85129B6A2A00020C753 /* TaskModel.swift */; };
@@ -61,6 +63,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12BBC22929B9F517007F8720 /* SVGKitSwift in Frameworks */,
+				12BBC22729B9F517007F8720 /* SVGKit in Frameworks */,
 				12DE573429AF3E8E00A6330B /* SwiftyJSON in Frameworks */,
 				125C164329B535330026143B /* Lottie in Frameworks */,
 			);
@@ -236,6 +240,8 @@
 			packageProductDependencies = (
 				12DE573329AF3E8E00A6330B /* SwiftyJSON */,
 				125C164229B535330026143B /* Lottie */,
+				12BBC22629B9F517007F8720 /* SVGKit */,
+				12BBC22829B9F517007F8720 /* SVGKitSwift */,
 			);
 			productName = FutStats;
 			productReference = 12536AF2298FB28A00BE9579 /* FutStats.app */;
@@ -268,6 +274,7 @@
 			packageReferences = (
 				12DE573229AF3E8E00A6330B /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				125C164129B535330026143B /* XCRemoteSwiftPackageReference "lottie-spm" */,
+				12BBC22529B9F517007F8720 /* XCRemoteSwiftPackageReference "SVGKit" */,
 			);
 			productRefGroup = 12536AF3298FB28A00BE9579 /* Products */;
 			projectDirPath = "";
@@ -540,6 +547,14 @@
 				minimumVersion = 4.0.0;
 			};
 		};
+		12BBC22529B9F517007F8720 /* XCRemoteSwiftPackageReference "SVGKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SVGKit/SVGKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		12DE573229AF3E8E00A6330B /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
@@ -555,6 +570,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 125C164129B535330026143B /* XCRemoteSwiftPackageReference "lottie-spm" */;
 			productName = Lottie;
+		};
+		12BBC22629B9F517007F8720 /* SVGKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 12BBC22529B9F517007F8720 /* XCRemoteSwiftPackageReference "SVGKit" */;
+			productName = SVGKit;
+		};
+		12BBC22829B9F517007F8720 /* SVGKitSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 12BBC22529B9F517007F8720 /* XCRemoteSwiftPackageReference "SVGKit" */;
+			productName = SVGKitSwift;
 		};
 		12DE573329AF3E8E00A6330B /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -11,7 +11,7 @@ class ApiStringURLs {
    
     static let todayMatches = "https://api.football-data.org/v4/matches"
     
-    static let matchesForConcreteDateString = "https://api.football-data.org/v4/matches?date=2023-01-01"
+   // static let matchesForConcreteDateString = "https://api.football-data.org/v4/matches?date=2023-01-01"
     
     
     static func matchesForConcreteDate(date: String) -> String {
