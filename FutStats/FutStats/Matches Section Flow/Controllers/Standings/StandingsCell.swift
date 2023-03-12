@@ -16,7 +16,7 @@ class StandingsCell: UITableViewCell {
     @IBOutlet weak var numOfLoses: UILabel!
     @IBOutlet weak var goalsDifference: UILabel!
     @IBOutlet weak var points: UILabel!
-    
+    @IBOutlet weak var position: UILabel!
     
    
     override func awakeFromNib() {

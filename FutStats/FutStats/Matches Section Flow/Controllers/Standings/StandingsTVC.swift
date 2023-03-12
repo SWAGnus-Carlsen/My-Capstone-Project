@@ -61,7 +61,7 @@ class StandingsTVC: UITableViewController {
         cell.numOfLoses.text = currentTeam?.lost.description
         cell.goalsDifference.text = currentTeam?.goalDifference.description
         cell.points.text = currentTeam?.points.description
-        cell.frame.size = CGSize(width: view.frame.width, height: 40)
+        cell.position.text = currentTeam?.position.description
         return cell
     }
     
