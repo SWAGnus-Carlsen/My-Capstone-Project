@@ -8,14 +8,14 @@
 import UIKit
 
 // MARK: - Welcome
-struct Welcome: Codable {
+struct MatchesFromJSON: Codable {
     let filters: Filters
     let resultSet: ResultSet
     let matches: [Match]
 }
-extension Welcome {
+extension MatchesFromJSON {
     init(data: Data) throws {
-        self = try JSONDecoder().decode(Welcome.self, from: data)
+        self = try JSONDecoder().decode(MatchesFromJSON.self, from: data)
     }
 
 }
@@ -57,12 +57,7 @@ struct Area: Codable {
     let flag: String?
 }
 
-// MARK: - Team
-struct Team: Codable {
-    let id: Int?
-    let name, shortName, tla: String?
-    let crest: String?
-}
+
 
 // MARK: - Competition
 struct Competition: Codable {

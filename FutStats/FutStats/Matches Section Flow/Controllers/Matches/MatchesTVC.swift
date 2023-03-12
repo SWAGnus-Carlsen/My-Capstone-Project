@@ -41,18 +41,11 @@ final class MatchesTVC: UITableViewController {
     @objc func didPullToRefresh() {
         // re-fetch data
         fillTable()
-//        print("start refresh")
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-//            self.tableView.refreshControl?.endRefreshing()
-//        }
+
     }
         
     // MARK: - Table view data source
 
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 0
-//    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -80,13 +73,13 @@ final class MatchesTVC: UITableViewController {
         return cell
     }
     
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-         // Return false if you do not want the specified item to be editable.
-         return true
-     }
-     */
+    
+//     // Override to support conditional editing of the table view.
+//     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+//         // Return false if you do not want the specified item to be editable.
+//         return true
+//     }
+//
 
     /*
      // Override to support editing the table view.
@@ -121,7 +114,7 @@ final class MatchesTVC: UITableViewController {
     
     private func fillTable() {
         
-        APIManager.shared.fetchMatches(from: ApiStringURLs.matchesForConcreteDate(date: "2023-03-05")) { [weak self] fetchedData in
+        APIManager.shared.fetchMatches(from: ApiStringURLs.matchesForConcreteDate(date: "2023-03-12")) { [weak self] fetchedData in
             self?.matches = fetchedData
             DispatchQueue.main.async {
                 self?.tableView.refreshControl?.endRefreshing()

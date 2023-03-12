@@ -8,13 +8,14 @@
 import SVGKit
 import SwiftyJSON
 import UIKit
+
 class APIManager {
     static var shared = APIManager()
     private init() {}
  
     func fetchMatches(from urlString: String, completion: @escaping ([Match]) -> Void) {
         guard let url = URL(string: urlString) else {
-            print("Error occured while converting url")
+            print("Error occured while converting url in #fetchMatches func")
             return
         }
         var request = URLRequest(url: url)
@@ -25,7 +26,7 @@ class APIManager {
             guard let data, error == nil else { return }
             
             do {
-                let jsonData = try JSONDecoder().decode(Welcome.self, from: data)
+                let jsonData = try JSONDecoder().decode(MatchesFromJSON.self, from: data)
                 print(try JSON(data: data))
                 completion(jsonData.matches)
             } catch {
@@ -81,4 +82,31 @@ class APIManager {
         }
         task.resume()
     }
+    
+    
+    func fetchStandings(from urlString: String, completion: @escaping ([Standing]) -> Void) {
+        
+        guard let url = URL(string: urlString) else {
+            print("Error occured while converting url in #fetchStandings func")
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.addValue(APIConstants.authToken,
+                         forHTTPHeaderField: APIConstants.nameOfHeader)
+        let task = URLSession.shared.dataTask(with: request) { data, _, error in
+            guard let data, error == nil else { return }
+            
+            do {
+                let jsonData = try JSONDecoder().decode(StandingsFromJSON.self, from: data)
+                print(try JSON(data: data))
+                completion(jsonData.standings)
+            } catch {
+                print("failed to convert: \(error)")
+            }
+            
+        }
+        task.resume()
+    }
+    
 }

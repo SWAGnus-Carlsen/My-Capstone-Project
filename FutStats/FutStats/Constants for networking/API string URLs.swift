@@ -18,6 +18,10 @@ class ApiStringURLs {
         "https://api.football-data.org/v4/matches?date=\(date)"
     }
     
+    static func standingsForConcreteLeague(_ league: String) -> String {
+        "https://api.football-data.org/v4/competitions/\(league)/standings"
+    }
+    
 //    //users
 //    static let usersPath = localServerPath + "users"
 //    static let usersPathURL = URL(string: usersPath)
