@@ -53,11 +53,13 @@ class MatchesCell: UITableViewCell {
 
     override func prepareForReuse() {
         super.prepareForReuse()
+        
         for subview in homeTeamLogo.subviews {
             subview.removeFromSuperview()
         }
         for subview in awayTeamLogo.subviews {
             subview.removeFromSuperview()
         }
+        
     }
 }

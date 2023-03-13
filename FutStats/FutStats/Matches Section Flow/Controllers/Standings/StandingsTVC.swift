@@ -10,20 +10,14 @@ import UIKit
 class StandingsTVC: UITableViewController {
     
     var standings: [Standing] = []
-    var standing: Standing?
-    
+     
+    var league: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         fillTable()
         
-        //        for standing in standings {
-        //            if standing.type == "TOTAL" {
-        //                self.standing = standing
-        //            }
-        //        }
-        //        tableView.reloadData()
         
         
         tableView.refreshControl = UIRefreshControl()
@@ -68,7 +62,8 @@ class StandingsTVC: UITableViewController {
     
     private func fillTable() {
         
-        APIManager.shared.fetchStandings(from: ApiStringURLs.standingsForConcreteLeague("PL")) { [weak self] fetchedData in
+        APIManager.shared.fetchStandings(from: ApiStringURLs.standingsForConcreteLeague(league ?? "PL")) {
+            [weak self] fetchedData in
             self?.standings = fetchedData
             
             DispatchQueue.main.async {

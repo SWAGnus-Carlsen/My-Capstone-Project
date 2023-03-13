@@ -18,7 +18,6 @@
 		12536AFF298FB28E00BE9579 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12536AFE298FB28E00BE9579 /* Assets.xcassets */; };
 		12536B02298FB28E00BE9579 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12536B00298FB28E00BE9579 /* LaunchScreen.storyboard */; };
 		12536B0F29918DF300BE9579 /* MatchesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12536B0E29918DF300BE9579 /* MatchesTVC.swift */; };
-		12536B1429918FDC00BE9579 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12536B1329918FDC00BE9579 /* Team.swift */; };
 		12536B162991926700BE9579 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12536B152991926700BE9579 /* Match.swift */; };
 		125C164329B535330026143B /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 125C164229B535330026143B /* Lottie */; };
 		125C164529B53E3F0026143B /* progressBar.json in Resources */ = {isa = PBXBuildFile; fileRef = 125C164429B53E3F0026143B /* progressBar.json */; };
@@ -49,7 +48,6 @@
 		12536B01298FB28E00BE9579 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		12536B03298FB28E00BE9579 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		12536B0E29918DF300BE9579 /* MatchesTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesTVC.swift; sourceTree = "<group>"; };
-		12536B1329918FDC00BE9579 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		12536B152991926700BE9579 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		125C164429B53E3F0026143B /* progressBar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = progressBar.json; sourceTree = "<group>"; };
 		125C164629B53EB80026143B /* progressBar2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = progressBar2.json; sourceTree = "<group>"; };
@@ -169,7 +167,6 @@
 			isa = PBXGroup;
 			children = (
 				12536B152991926700BE9579 /* Match.swift */,
-				12536B1329918FDC00BE9579 /* Team.swift */,
 				12AA1D7129BE5CCB009805B7 /* Standings.swift */,
 			);
 			path = Models;
@@ -344,7 +341,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				12CAF85629B6A2A00020C753 /* LoginViewController.swift in Sources */,
-				12536B1429918FDC00BE9579 /* Team.swift in Sources */,
 				12DE574729B12F6B00A6330B /* MatchesCell.swift in Sources */,
 				12536B0F29918DF300BE9579 /* MatchesTVC.swift in Sources */,
 				12AA1D7229BE5CCB009805B7 /* Standings.swift in Sources */,

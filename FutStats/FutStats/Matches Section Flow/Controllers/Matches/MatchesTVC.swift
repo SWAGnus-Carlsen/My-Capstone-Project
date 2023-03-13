@@ -73,7 +73,14 @@ final class MatchesTVC: UITableViewController {
         return cell
     }
     
-    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let standingsVC = storyboard.instantiateViewController(withIdentifier: "StandingsTVC") as? StandingsTVC else { return }
+        guard let passedString = matches[indexPath.row].competition?.code else { return }
+        print(passedString)
+        standingsVC.league = passedString
+        navigationController?.pushViewController(standingsVC, animated: true)
+    }
 //     // Override to support conditional editing of the table view.
 //     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
 //         // Return false if you do not want the specified item to be editable.
@@ -102,15 +109,18 @@ final class MatchesTVC: UITableViewController {
         return true
     }
     
-    /*
+    
      // MARK: - Navigation
-
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         // Get the new view controller using segue.destination.
-         // Pass the selected object to the new view controller.
-     }
-     */
+//
+//     // In a storyboard-based application, you will often want to do a little preparation before navigation
+//     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//         if segue.destination is StandingsTVC {
+//
+//         }
+//         // Get the new view controller using segue.destination.
+//         // Pass the selected object to the new view controller.
+//     }
+     
     
     private func fillTable() {
         
